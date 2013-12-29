@@ -6378,6 +6378,11 @@ button.tabs li .caption .close-custom {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+@font-face {
+  font-family: Karla;
+  src: url(../font/Karla-Bold.ttf);
+  font-weight: bold;
+}
 body {
   -webkit-font-smoothing: antialiased;
 }
@@ -6395,7 +6400,7 @@ nav a:hover {
   color: #428bca;
 }
 nav .menu a {
-  font-family: Karla;
+  font-family: 'Karla', sans-serif;
   color: #777777;
   font-weight: 700;
   text-transform: uppercase;
@@ -6409,7 +6414,7 @@ nav .menu a:hover {
   color: #777777;
 }
 .options li a {
-  font-family: Karla;
+  font-family: 'Karla', sans-serif;
   color: #777777;
   font-weight: 700;
   text-transform: uppercase;
