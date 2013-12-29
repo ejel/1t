@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1t</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Custom CSS -->
+	<!-- http://stackoverflow.com/questions/10451317/twitter-bootstrap-customization-best-practices?lq=1 -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Karla:700' rel='stylesheet' type='text/css'>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Mustache & jQuery-->
+	<script src="js/mustache.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="js/template.js"></script>
+
+</head>
+<body>
+	<div class="main">
+		<nav>
+			<a href="#" class="extension-name">TabHeaven</a>
+			<div class="nav-menu">
+				<ul class="menu">
+					<li><a href="#">About</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="wrapper">
+				<ul class="lists">
+					<li class="list">
+						<div class="list-header">
+							<h3 class="list-title">Today <small class="list-date">at 3:14 p.m.</small></h3>
+							<ul class="options">
+								<li><a href="#">Delete</a></li>
+								<li><a href="#">Open</a></li>
+							</ul>
+						</div>
+						<ul class="tabs">
+							<li class="tab">
+								<img class="tab-img" src="i/bootstrap.png" alt="Bootstrap">
+								<div class="caption">
+									<button type="button" class="close-custom" aria-hidden="true">&times;</button>
+	                <div class="blur"></div>
+	                <dl class="caption-text">
+	                  <dt class="tab-title"><img class="favicon" src="i/favicon/bootstrap.png" alt="Bootstrap">Bootstrap</dt>
+	                  <dd class="url">bootstrap.com</dd>
+	                </dl>
+	          		</div>
+		      		</li>
+		      		<li class="tab">
+								<img class="tab-img" src="i/Apple.png" alt="Bootstrap">
+								<div class="caption">
+									<button type="button" class="close-custom" aria-hidden="true">&times;</button>
+	                <div class="blur"></div>
+	                <dl class="caption-text">
+	                  <dt class="tab-title"><img class="favicon" src="i/favicon/bootstrap.png" alt="Bootstrap">Apple</dt>
+	                  <dd class="url">apple.com</dd>
+	                </dl>
+	          		</div>
+		      		</li>
+		      		<li class="tab">
+								<img class="tab-img" src="i/Ratchet.png" alt="Bootstrap">
+								<div class="caption">
+									<button type="button" class="close-custom" aria-hidden="true">&times;</button>
+	                <div class="blur"></div>
+	                <dl class="caption-text">
+	                  <dt class="tab-title"><img class="favicon" src="i/favicon/the-verge.png" alt="Bootstrap">Ratchet</dt>
+	                  <dd class="url">maker.github.io/ratchet/</dd>
+	                </dl>
+	          		</div>
+		      		</li>
+		      		<li class="tab">
+								<img class="tab-img" src="i/the-verge.jpg" alt="Bootstrap">
+								<div class="caption">
+									<button type="button" class="close-custom" aria-hidden="true">&times;</button>
+
+	                <div class="blur"></div>
+	                <dl class="caption-text">
+	                  <dt class="tab-title"><img class="favicon" src="i/favicon/bootstrap.png" alt="Bootstrap">Origami - Design prototyping with Quartz Composer</dt>
+	                  <dd class="url">theverge.com</dd>
+	                </dl>
+	          		</div>
+		      		</li>
+		      		<li class="tab">
+								<img class="tab-img" src="i/bootstrap.png" alt="Bootstrap">
+								<div class="caption">
+	                <div class="blur"></div>
+	                <dl class="caption-text">
+	                  <dt class="tab-title">Amazing Caption</dt>
+	                  <dd class="url">Whatever It Is - Always Awesome</dd>
+	                </dl>
+	          		</div>
+		      		</li>
+						</ul>
+					</li>
+					<li class="list">
+						<div class="list-header">
+							<h3 class="no-title"><!-- <a href"#">Add Title</a> --><small class="list-date">Today at 3:14 p.m.</small></h3>
+							<ul class="options">
+								<li><a href="#">Delete</a></li>
+								<li><a href="#">Open</a></li>
+							</ul>
+						</div>
+						<ul class="tabs">
+							<li class="tab">
+								<img class="tab-img" src="i/bootstrap.png" alt="Bootstrap">
+								<div class="caption">
+	                <div class="blur"></div>
+	                <dl class="caption-text">
+	                  <dt class="tab-title">Bootstrap</dt>
+	                  <dd class="url">bootstrap.com</dd>
+	                </dl>
+	          		</div>
+		      		</li>
+		      		<li class="tab">
+								<img class="tab-img" src="i/Apple.png" alt="Bootstrap">
+								<div class="caption">
+	                <div class="blur"></div>
+	                <dl class="caption-text">
+	                  <dt class="tab-title">Apple</dt>
+	                  <dd class="url">apple.com</dd>
+	                </dl>
+	          		</div>
+		      		</li>
+		      		<li class="tab">
+								<img class="tab-img" src="i/bootstrap.png" alt="Bootstrap">
+								<div class="caption">
+	                <div class="blur"></div>
+	                <dl class="caption-text">
+	                  <dt class="tab-title">Amazing Caption</dt>
+	                  <dd class="url">Whatever It Is - Always Awesome</dd>
+	                </dl>
+	          		</div>
+		      		</li>
+		      		<li class="tab">
+								<img class="tab-img" src="i/the-verge.jpg" alt="Bootstrap">
+								<div class="caption">
+	                <div class="blur"></div>
+	                <dl class="caption-text">
+	                  <dt class="tab-title">Amazing Caption</dt>
+	                  <dd class="url">Whatever It Is - Always Awesome</dd>
+	                </dl>
+	          		</div>
+		      		</li>
+		      		<li class="tab">
+								<img class="tab-img" src="i/bootstrap.png" alt="Bootstrap">
+								<div class="caption">
+	                <div class="blur"></div>
+	                <dl class="caption-text">
+	                  <dt class="tab-title">Amazing Caption</dt>
+	                  <dd class="url">Whatever It Is - Always Awesome</dd>
+	                </dl>
+	          		</div>
+		      		</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<script type="text/html" id="template">
+{{#tabs}}
+  <li class="tab">
+    <img class="tab-img" src="{{screenShotUrl}}" alt="{{title}}">
+    <div class="caption">
+      <button type="button" class="close-custom" aria-hidden="true">&times;</button>
+      <div class="blur"></div>
+      <dl class="caption-text">
+        <dt class="tab-title"><img class="favicon" src="{{favIconUrl}}" alt="{{title}}">{{title}}</dt>
+        <dd class="url">{{url}}</dd>
+      </dl>
+    </div>
+  </li>
+{{/tabs}}
+</script>
+	<div id="mustache"></div>
+</body>
+</html>
