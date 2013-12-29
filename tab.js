@@ -5,8 +5,12 @@ chrome.runtime.onMessage.addListener(
 );
 
 var onPageReady = function(tabs) {
-    console.log(tabs);
-    for (var i = 0; i < tabs.tabs.length; i++) {
-        $('body ul').append("<img src='" + tabs.tabs[i].dataUrl + "'>");
-    }
+  //get a reference to our HTML template
+  template = $('#template').html(),
+
+  //tell Mustache.js to iterate through the JSON and insert the data into the HTML template
+  output = Mustache.render(template, tabs);
+
+  //append the HTML template to the DOM
+  $('.tabs').append(output);
 }
