@@ -10,4 +10,3 @@ var onPageReady = function(tabs) {
         $('body ul').append("<img src='" + tabs.tabs[i].dataUrl + "'>");
     }
 }
-
