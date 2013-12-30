@@ -9,7 +9,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     // });
 
 
-    chrome.tabs.query({currentWindow: true, active: false}, function(tabs) {
+    chrome.tabs.query({currentWindow: true}, function(tabs) {
       var populatedTabs = [];
 
       var photoTab = function(index) {

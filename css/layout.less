@@ -17,6 +17,15 @@
 @img-width: 275px;
 @img-height: 170px;
 
+// Mixins
+.clip-text(@line-clamp; @custom-line-height: inherit) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @line-clamp; /* number of lines to show */
+}
+
 // Layout
 // -------------------------
 
@@ -41,17 +50,6 @@ nav {
 
   padding-right: 30px;
 }
-
-// .title {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   display: block;
-//   min-width: 400px;
-//   .extension-name {
-//     padding: 5px;
-//   }
-// }
 
 // Container
 .container {
@@ -110,94 +108,98 @@ nav {
   list-style-type: none;
   margin: 0px;
   padding: 0;
+}
 
-  li {
-    float: left;
-    margin: 5px;
-    position: relative;
-    overflow: hidden;
+.tab {
+  float: left;
+  margin: 5px;
+  position: relative;
+  overflow: hidden;
+  width: @img-width;
+  min-height: @img-height;
+  max-height: @img-height;
+
+  .tab-img {
     width: @img-width;
-    min-height: @img-height;
-    max-height: @img-height;
-
-    .tab-img {
-      width: @img-width;
-      float: left;
-      z-index: 4;
-      -webkit-transition:all 0.25s ease-in-out;
-      transition:all 0.25s ease-in-out;
-    }
-
-    .caption {
-      cursor: pointer;
-      position: absolute;
-
-      .blur {
-        height: @img-height;
-        width: @img-width;
-        z-index: 5;
-        position: absolute;
-      }
-
-      .close-custom {
-        .close;
-        background: transparent;
-        border: 0;
-        padding: 0;
-        -webkit-appearance: none;
-        z-index: 10;
-        // color: #fff;
-        position: absolute;
-        right: 5px;
-
-        @close-font-weight:           400;
-        @close-color:                 #eee;
-        @close-text-shadow:           0px 2px 2px #000;
-        .opacity(0);
-      }
-
-      .caption-text {
-        z-index: 10;
-        color: #fff;
-        position: relative;
-        width: 275px;
-        height: 170px;
-        padding-left: 10px;
-        padding-bottom: 10px;
-        // .opacity(.80);
-        display: table-cell;
-        vertical-align: bottom;
-
-        .tab-title {
-          line-height: 1.24em;
-
-          .favicon {
-            width: 16px;
-            height: 16px;
-            .pull-left;
-            margin-top: 0;
-            margin-right: 4px;
-          }
-        }
-
-        .url {
-          // margin-left: 20px;
-        }
-      }
-    }
+    float: left;
+    z-index: 4;
+    -webkit-transition:all 0.25s ease-in-out;
+    transition:all 0.25s ease-in-out;
   }
 
-  li:hover {
+  .caption {
+    cursor: pointer;
+    position: absolute;
+    max-width: 275px;
+
     .blur {
-      opacity: .3;
-      -webkit-transition:all 0.45s ease-in-out;
-      transition:all 0.45s ease-in-out;
+      height: @img-height;
+      width: @img-width;
+      z-index: 5;
+      position: absolute;
     }
 
     .close-custom {
-      opacity: .75;
-      -webkit-transition:all 0.30s ease-in-out;
-      transition:all 0.30s ease-in-out;
+      .close;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      -webkit-appearance: none;
+      z-index: 10;
+      // color: #fff;
+      position: absolute;
+      right: 5px;
+
+      @close-font-weight:           400;
+      @close-color:                 #eee;
+      @close-text-shadow:           0px 2px 2px #000;
+      .opacity(0);
     }
+
+    .caption-text {
+      z-index: 10;
+      color: #fff;
+      position: relative;
+      width: 275px;
+      height: 170px;
+      max-width: 275px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      display: table-cell;
+      vertical-align: bottom;
+
+      .tab-title {
+        line-height: 1.24em;
+        .clip-text(2);
+
+        .favicon {
+          width: 16px;
+          height: 16px;
+          margin-top: 0;
+          margin-right: 4px;
+        }
+      }
+
+      .url {
+        .clip-text(1);
+      }
+
+      //TODO: get favicon back! clip-text hid the favicon somehow...
+    }
+  }
+}
+
+.tab:hover {
+  .blur {
+    opacity: .3;
+    -webkit-transition:all 0.45s ease-in-out;
+    transition:all 0.45s ease-in-out;
+  }
+
+  .close-custom {
+    opacity: .75;
+    -webkit-transition:all 0.30s ease-in-out;
+    transition:all 0.30s ease-in-out;
   }
 }
