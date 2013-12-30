@@ -103,22 +103,69 @@ nav {
 }
 
 .tab {
-		border: 1px solid @gray-lighter;
-		.caption {
-			.blur {
+	border: 1px solid @gray-lighter;
+
+	.tab-img {}
+
+	.caption {
+		.blur {
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(1%,rgba(0,0,0,0.01)), color-stop(60%,rgba(0,0,0,0.45)), color-stop(80%,rgba(0,0,0,0.75)), color-stop(100%,rgba(0,0,0,0.9))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.45) 60%,rgba(0,0,0,0.75) 80%,rgba(0,0,0,0.9) 100%); /* Chrome10+,Safari5.1+ */
 background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 1%,rgba(0,0,0,0.45) 60%,rgba(0,0,0,0.75) 80%,rgba(0,0,0,0.9) 100%); /* W3C */
+		}
 
+		.close-custom {
+			.close;
+			background: transparent;
+			-webkit-appearance: none;
+			@close-font-weight:           400;
+      @close-color:                 #eee;
+      @close-text-shadow:           0px 2px 2px #000;
+      .opacity(0);
+		}
+
+		.caption-text {
+			color: #fff;
+
+			.tab-title {
+
+				.favicon {}
 			}
 
-			.caption-text:hover, .caption-text:focus {
-				.opacity(1);
-			}
+			.url {}
 
-			.close-custom:hover, .close-custom:focus {
-			  .opacity(1);
-			  outline: none;
-			}
+		}
+
+		.caption-text:hover, .caption-text:focus {
+			.opacity(1);
+		}
+
+		.close-custom:hover, .close-custom:focus {
+		  .opacity(1);
+		  outline: none;
 		}
 	}
+}
+
+.tab:hover {
+
+	.tab-img {
+		// transform: scale(1.15,1.15);
+		// -webkit-transform:scale(1.15,1.15);
+		// -moz-transform:scale(1.15,1.15);
+		// -ms-transform:scale(1.15,1.15);
+		// -o-transform:scale(1.15,1.15);
+	}
+
+  .blur {
+    opacity: .3;
+    -webkit-transition:all 0.45s ease-in-out;
+    transition:all 0.45s ease-in-out;
+  }
+
+  .close-custom {
+    opacity: .75;
+    -webkit-transition:all 0.30s ease-in-out;
+    transition:all 0.30s ease-in-out;
+  }
+}
