@@ -36,9 +36,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     var show1Tab = function(tabs) {
         chrome.storage.local.set({'tabs': tabs}, function() {
             console.log("Tabs saved");
-            chrome.tabs.create({url: chrome.extension.getURL('tab.html')}, function(tab) {
-                chrome.tabs.sendMessage(tab.id, {'tabs': tabs});
-            });
+            chrome.tabs.create({url: chrome.extension.getURL('tab.html')});
         });
     }
 });
